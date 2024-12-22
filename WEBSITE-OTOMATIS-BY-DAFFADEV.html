@@ -1,0 +1,293 @@
+<!--
+--  KODE INI DIBUAT OLEH 𝘿𝘼𝙁𝙁𝘼 𝘿𝙀𝙑𝙀𝙇𝙊𝙋𝙀𝙍
+--  DILARANG KERAS DI PERJUAL BELIKAN
+-- INGIN JASA PEMBUATAN JASA WEBSITE OTOMATIS YANG BAGUS? ORDER AJA DI 6281324406984
+-- JANGAN HAPUS CREDIT!!! HARGAI PEMBUAT.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAFFA SHOP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        .header {
+            background-color: #4c22a0;
+            padding: 20px;
+            text-align: center;
+        }
+        .header img {
+            width: 50px;
+            vertical-align: middle;
+        }
+        .header h1 {
+            display: inline;
+            margin-left: 10px;
+            font-size: 24px;
+        }
+
+        /* Produk Grid */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #262626;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .card p {
+            font-size: 14px;
+            padding: 0 10px 10px;
+        }
+
+        .card button {
+            background-color: #4c22a0;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .card button:hover {
+            background-color: #6a36d1;
+        }
+
+        /* Modal */
+        #paymentModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .modal-content {
+            background-color: #262626;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .modal-content img {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .modal-content h3, .modal-content h1 {
+            color: white;
+        }
+
+        .modal-content h1 {
+            color: #f39c12;
+            font-size: 32px;
+        }
+
+        .modal-content button {
+            background-color: #4c22a0;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* WhatsApp Icon */
+        .whatsapp-icon-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 5px;
+        }
+        .whatsapp-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <img src="https://f.top4top.io/p_3274spru61.jpg" alt="Logo">
+        <h1>Game Top-Up</h1>
+    </div>
+
+    <!-- Produk Grid -->
+    <div class="container">
+        <!-- 6 Produk -->
+        <div class="card">
+            <img src="https://f.top4top.io/p_3270l345g1.jpg" alt="Produk 1">
+            <h3>Produk 1</h3>
+            <button onclick="showPaymentModal('Produk 1')">Top-Up Sekarang</button>
+        </div>
+
+        <div class="card">
+            <img src="https://f.top4top.io/p_3270l345g1.jpg" alt="Produk 2">
+            <h3>Produk 2</h3>
+            <button onclick="showPaymentModal('Produk 2')">Top-Up Sekarang</button>
+        </div>
+
+        <div class="card">
+            <img src="https://f.top4top.io/p_3270l345g1.jpg" alt="Produk 3">
+            <h3>Produk 3</h3>
+            <button onclick="showPaymentModal('Produk 3')">Top-Up Sekarang</button>
+        </div>
+
+        <div class="card">
+            <img src="https://l.top4top.io/p_3266ux3eo1.jpg" alt="Produk 4">
+            <h3>Produk 4</h3>
+            <button onclick="showPaymentModal('Produk 4')">Top-Up Sekarang</button>
+        </div>
+
+        <div class="card">
+            <img src="https://l.top4top.io/p_3266ux3eo1.jpg" alt="Produk 5">
+            <h3>Produk 5</h3>
+            <button onclick="showPaymentModal('Produk 5')">Top-Up Sekarang</button>
+        </div>
+
+        <div class="card">
+            <img src="https://l.top4top.io/ p_3266ux3eo1.jpg" alt="Produk 6"> <!-- UBAH JADI FOTO QRIS LU
+            
+            <h3>Produk 6</h3>
+            <button onclick="showPaymentModal('Produk 6')">Top-Up Sekarang</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="paymentModal">
+        <div class="modal-content">
+            <h3>PEMBAYARAN UNTUK PRODUK:</h3>
+            <h3 id="productName"></h3>
+            <h1 id="countdownTimer">30:00</h1>
+            <img src="https://l.top4top.io/p_32749io411.jpg" alt="Pembayaran">
+            <button onclick="closeModal()">Tutup</button>
+        </div>
+    </div>
+
+    <!-- WhatsApp Icon -->
+    <div class="whatsapp-icon-container">
+        <a href="https://wa.me/6281324406984" target="_blank">
+            <img class="whatsapp-icon" src="https://i.top4top.io/p_3266wlnol1.jpg" alt="WhatsApp">
+        </a>
+    </div>
+    <footer style="background-color: #111827; color: #fff; padding: 40px 20px; font-family: Arial, sans-serif;">
+    <!-- Nama dan Deskripsi -->
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: #34D399; font-size: 24px; font-weight: bold;">DAFFA DEVELOPER</h2>
+        <p style="color: #9CA3AF; margin-top: 8px;">Your premium destination for game top-ups and digital content.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div style="margin-bottom: 30px;">
+        <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 10px;">Quick Links</h3>
+        <ul style="list-style: none; padding: 0; color: #9CA3AF;">
+            <li style="margin-bottom: 5px;"><a href="#" style="color: #9CA3AF; text-decoration: none;">About Us</a></li>
+            <li style="margin-bottom: 5px;"><a href="#" style="color: #9CA3AF; text-decoration: none;">FAQs</a></li>
+            <li style="margin-bottom: 5px;"><a href="#" style="color: #9CA3AF; text-decoration: none;">Terms of Service</a></li>
+            <li><a href="#" style="color: #9CA3AF; text-decoration: none;">Privacy Policy</a></li>
+        </ul>
+    </div>
+
+    <!-- Contact Us -->
+    <div style="margin-bottom: 30px;">
+        <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 10px;">Contact Us</h3>
+        <p style="color: #9CA3AF; margin: 5px 0;">Email: support@daffadeveloper.com</p>
+        <p style="color: #9CA3AF; margin: 5px 0;">Phone: +62 813-2440-6984</p>
+    </div>
+
+    <!-- Follow Us -->
+    <div>
+        <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 10px;">Follow Us</h3>
+        <div style="display: flex; gap: 15px; align-items: center;">
+            <a href="#" style="color: #9CA3AF; font-size: 24px;">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="#" style="color: #9CA3AF; font-size: 24px;">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" style="color: #9CA3AF; font-size: 24px;">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/6281324406984" style="color: #9CA3AF; font-size: 24px;">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        let countdown;
+
+        function showPaymentModal(product) {
+            document.getElementById("productName").innerText = product;
+            document.getElementById("paymentModal").style.display = "flex";
+            startCountdown();
+        }
+
+        function closeModal() {
+            document.getElementById("paymentModal").style.display = "none";
+            clearInterval(countdown);
+        }
+
+        function startCountdown() {
+            let time = 30 * 60; 
+            const timerElement = document.getElementById("countdownTimer");
+
+            clearInterval(countdown);
+            countdown = setInterval(() => {
+                const minutes = Math.floor(time / 60);
+                const seconds = time % 60;
+                timerElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+                time--;
+
+                if (time < 0) {
+                    clearInterval(countdown);
+                    timerElement.textContent = "WAKTU HABIS";
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
